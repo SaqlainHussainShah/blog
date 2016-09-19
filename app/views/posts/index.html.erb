@@ -1,0 +1,13 @@
+<h1>Our blog</h1>
+
+<% @posts .each do |post| %>
+<h2><%= link_to post.title, post %></h2>
+<p><%= post.content %></p>
+<p><%= link_to "Edit", edit_post_path(post) %>
+	|
+<%= button_to 'Destroy',  post,  method: :delete %>
+</p>
+<hr />
+<% end %>
+<p><%= link_to "Add A new post", new_post_path %> </p> 
+ 
